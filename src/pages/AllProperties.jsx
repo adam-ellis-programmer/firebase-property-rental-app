@@ -55,7 +55,8 @@ const AllProperties = () => {
     return <PageLoader />
   }
 
-  console.log(imgLoading)
+  // leave for referance {finishedLoading: true}
+  // console.log(imgLoading)
   return (
     <div className="all-properties-page">
       <section className="all-properties-header">

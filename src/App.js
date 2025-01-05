@@ -16,9 +16,11 @@ import UpdateProperty from './pages/UpdateProperty'
 import Footer from './layout/Footer'
 import PrivateRoute from './components/PrivateRoute'
 import NotFound from './pages/NotFound'
+import GlobalAlert from './components/alerts/GlobalAlert'
 function App() {
   return (
     <div>
+      <GlobalAlert />
       <Router>
         <Header />
         <Routes>
