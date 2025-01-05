@@ -15,6 +15,11 @@ const GlobalAlert = () => {
       setIsOnline(true)
       setShowOnlineMessage(true) // Show the "Back online!" message
 
+      // Trigger a refresh after a delay (optional)
+      setTimeout(() => {
+        window.location.reload() // Reload the browser
+      }, 3000) // Adjust delay as needed
+
       // Hide the message after 5 seconds
       setTimeout(() => {
         setShowOnlineMessage(false)
