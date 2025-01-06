@@ -20,6 +20,7 @@ import GlobalAlert from './components/alerts/GlobalAlert'
 function App() {
   return (
     <div>
+      {/* custom alert for internet connectivity */}
       <GlobalAlert />
       <Router>
         <Header />

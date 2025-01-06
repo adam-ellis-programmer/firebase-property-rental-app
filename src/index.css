@@ -22,6 +22,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /*  */
   font-family: var(--primary-font);
+
+  /* background-color: #273a5b; */
+  /* color: #fff; */
 }
 
 code {
@@ -2949,7 +2952,11 @@ select {
 @media screen and (max-width: 1200px) {
   .footer-wrap {
     grid-template-columns: repeat(2, 1fr);
-    min-height: 800px;
+    /* border: 100px solid red; */
+  }
+
+  .footer-logo-div {
+    grid-column: 1 / -1;
   }
 }
 @media screen and (max-width: 800px) {

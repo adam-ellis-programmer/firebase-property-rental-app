@@ -1,26 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const GlobalAlert = () => {
+  const msgRef = useRef()
+
   const [isOnline, setIsOnline] = useState(navigator.onLine)
   const [showOnlineMessage, setShowOnlineMessage] = useState(false) // For showing "Back online!"
+
+  useEffect(() => {
+    // console.log(msgRef.current)
+    return () => {}
+  }, [])
 
   useEffect(() => {
     const handleOffline = () => {
       console.log('Lost internet connection!')
       setIsOnline(false)
+      console.log(msgRef.current)
+      msgRef.current.focus()
     }
 
+    // re-factor so that it reloads first and then shows flash message
     const handleOnline = () => {
       console.log('Back online!')
       setIsOnline(true)
-      setShowOnlineMessage(true) // Show the "Back online!" message
+      setShowOnlineMessage(true)
+      msgRef.current.focus()
 
-      // Trigger a refresh after a delay (optional)
+      // Trigger a refresh
       setTimeout(() => {
-        window.location.reload() // Reload the browser
-      }, 3000) // Adjust delay as needed
+        window.location.reload()
+      }, 3000)
 
-      // Hide the message after 5 seconds
+      // hide message
       setTimeout(() => {
         setShowOnlineMessage(false)
       }, 3000)
@@ -29,7 +40,7 @@ const GlobalAlert = () => {
     window.addEventListener('offline', handleOffline)
     window.addEventListener('online', handleOnline)
 
-    // Cleanup listeners on unmount
+    // remove the event listeners
     return () => {
       window.removeEventListener('offline', handleOffline)
       window.removeEventListener('online', handleOnline)
@@ -43,8 +54,12 @@ const GlobalAlert = () => {
         top: 0,
         width: '100%',
         zIndex: 1000,
+        outline: 'none',
+
         // border: '1px solid red',
       }}
+      ref={msgRef}
+      tabIndex="0"
     >
       {!isOnline && (
         <div
