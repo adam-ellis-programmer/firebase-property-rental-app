@@ -1356,7 +1356,6 @@ nav {
   display: flex;
   /* flex-direction: column; */
   margin: 0.9rem 0;
-  /* border: 1px solid; */
 }
 .reg-form-switch-div {
   /* border: 1px solid ; */
@@ -1461,8 +1460,6 @@ nav {
 .form-text-area {
   min-width: 250px;
   max-width: 250px;
-  min-height: 115px;
-  max-height: 115px;
   border: none;
   border: 0.1px solid var(--primary-color);
   border-radius: 20px;
@@ -1472,8 +1469,6 @@ nav {
 
 .form-text-area,
 .form-text-area-name {
-  min-height: 50px;
-  max-height: 50px;
   border-radius: 20px;
   outline: none;
 }
@@ -1482,6 +1477,17 @@ nav {
   outline: 1px solid var(--primary-clr);
   outline-offset: 3px;
 }
+
+.form-text-area-name {
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+}
+
+.form-text-area {
+  min-height: 80px;
+}
+
 
 .form-tags-container {
   /* border: 1px solid; */

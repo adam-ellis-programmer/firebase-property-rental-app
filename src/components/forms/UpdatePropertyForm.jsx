@@ -160,7 +160,7 @@ const UpdatePropertyForm = ({ propDetails, setIsSubmiting }) => {
       </Link>
 
       {propDetails && propDetails.address}
-      <p className="reg-p">register your property</p>
+      <p className="reg-p">update your property</p>
 
       <div className="reg-form-select-wrap">
         <label htmlFor="type" className="form-label">
@@ -171,7 +171,6 @@ const UpdatePropertyForm = ({ propDetails, setIsSubmiting }) => {
             id="propertyType"
             name="propertyType"
             className="property-type-select"
-            required=""
             value={propertyType}
             onChange={onMutate}
           >
